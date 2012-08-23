@@ -20,7 +20,8 @@
 #include <list>
 #include <cmath>
 
-//can be specialized to for example comopent wise calculation
+// can be specialized to for example comopent wise calculation
+//  if y you have other classes
 template <class T>
 T square(T v) {
 	return v*v;
@@ -35,8 +36,11 @@ T square_root(T v) {
 template <class T>
 class Average {
 public:
+//Initialisation
 Average(): n(0), cacheValid(false) {}
 ~Average(){}
+
+//Add a value to the list
 void add(T value) {
 	table.push_back(value);
 	//initialize sum value
@@ -47,11 +51,14 @@ void add(T value) {
 	n++;
 	cacheValid=false;
 }
+
+//get the average
 T getAverage() {
 	assert(n!=0);
 	return sum * (1.0/((double) n));
 }
 
+//get the deviation
 T getDeviation() {
 	assert(n!=0);
 	if (cacheValid)
@@ -69,7 +76,7 @@ T getDeviation() {
 	cacheValid=true;
 	return dev;
 }
-	
+
 private:
 T sum;
 int n;
