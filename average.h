@@ -64,8 +64,10 @@ T getDeviation() {
 	if (cacheValid)
 		return deviationCache;
 	T avg = getAverage();
-	//Fancy way to write a 0. T can be anything so we can't simply write '=0'
-	T dev=*table.begin()+(-1.0*(*table.begin()));
+	T dev;
+	//Fancy way to write a 0 (zero).
+	//  T can be anything so we can't simply write '=0'
+	dev=*table.begin()-(*table.begin());
 	for (typename std::list<T>::iterator it= table.begin(); it!=table.end(); it++) {
 		T d=*table.begin()-avg;
 		dev+=square(d);
