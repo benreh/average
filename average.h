@@ -51,6 +51,10 @@ void add(T value) {
 	n++;
 	cacheValid=false;
 }
+//get the number of elements
+int getNumberOfElements() {
+	return n;
+}
 
 //get the average
 T getAverage() {
@@ -64,6 +68,10 @@ T getDeviation() {
 	if (cacheValid)
 		return deviationCache;
 	T avg = getAverage();
+	//Only one Element, deviation is 0, prevent div-by-zero
+	if (n==1) {
+		return (*table.begin()-(*table.begin()));
+	}
 	T dev;
 	//Fancy way to write a 0 (zero).
 	//  T can be anything so we can't simply write '=0'

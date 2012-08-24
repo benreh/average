@@ -41,5 +41,11 @@ int main() {
 	//test cache
 	assert( a_i.getDeviation() == a_i.getDeviation());
 	
+	//Test if dev is 0 with only one element
+	Average<int> a_f2;
+	a_f2.add(3.0);
+	assert(a_f2.getDeviation()==0);
+	
+	
 	return 0;
 }
