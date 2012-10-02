@@ -46,6 +46,7 @@ int main() {
 	a_f2.add(3.0);
 	assert(a_f2.getDeviation()==0);
 	
+	a_f2.clear();
 	
 	return 0;
 }

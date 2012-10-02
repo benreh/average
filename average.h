@@ -86,6 +86,12 @@ T getDeviation() {
 	cacheValid=true;
 	return dev;
 }
+void clear() {
+		sum=sum + (sum*(-1.0));
+		n=0;
+		table.clear();
+		
+}
 
 private:
 T sum;
