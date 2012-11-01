@@ -21,12 +21,6 @@
  
 import numpy as np
 
-def mysqrt(x):
-	if type(x)!=type(np.array([0])):
-		return m.sqrt(x)
-	else:
-		return np.sqrt(x)		
-
 def average(arr):
 	#Some workaround to initialize with the correct datatype
 	avg=arr[0]
