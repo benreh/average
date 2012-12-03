@@ -24,7 +24,7 @@ import numpy as np
 def average(arr):
 	#Some workaround to initialize with the correct datatype
 	avg=arr[0]
-	avg=avg+(-1.0)*arr[0]
+	avg=avg-arr[0]
 	dev=avg
 	
 	for v in arr:
